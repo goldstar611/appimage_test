@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-18.04
-    name: Build on ubuntu-18.04 armv7
+    name: Build on ubuntu-18.04 aarch64
     
     steps:
       - uses: actions/checkout@v2.1.0
@@ -17,10 +17,13 @@ jobs:
         name: Run commands
         id: runcmd
         with:
-          arch: armv7
+          arch: aarch64
           distro: ubuntu18.04
 
           run: |
+            sudo apt update
+            sudo apt install wget
+            echo ""
             uname -a
             wget https://cloud.john-livingston.fr/s/jKc7besKdzWm6pf/download/bash-4.4.20-aarch64.2.AppImage
             chmod +x bash-4.4.20-aarch64.2.AppImage
