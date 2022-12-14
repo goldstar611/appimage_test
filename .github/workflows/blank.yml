@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Run a multi-line script
         run: |
-          sudo dpkg --add-architecture arm64
+          #sudo dpkg --add-architecture arm64
           sudo apt update
           sudo apt install -y qemu qemu-user-static wget libfuse2
           uname -a
