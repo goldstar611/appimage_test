@@ -17,17 +17,17 @@ jobs:
           sudo apt install -y qemu qemu-user-static wget
           
           # Download and extract an arm64/aarch64 rootfs
-          wget https://github.com/debuerreotype/docker-debian-artifacts/raw/dist-arm64v8/bullseye/rootfs.tar.xz
+          wget https://github.com/debuerreotype/docker-debian-artifacts/raw/dist-arm64v8/bullseye/rootfs.tar.xz >/dev/null
           sudo tar xf rootfs.tar.xz
           
           # Make foreign chroot work
-          sudo cp sudo cp /usr/bin/qemu-aarch64-static ./bin/
+          sudo cp /usr/bin/qemu-aarch64-static ./bin/
           
           # Install dependencies for the AppImage
           sudo chroot . bash -c 'apt update && apt install -t libfuse2'
           
           # Download the AppImage in question; mark it as executable
-          wget https://cloud.john-livingston.fr/s/jKc7besKdzWm6pf/download/bash-4.4.20-aarch64.2.AppImage
+          wget https://cloud.john-livingston.fr/s/jKc7besKdzWm6pf/download/bash-4.4.20-aarch64.2.AppImage >/dev/null
           chmod +x bash-4.4.20-aarch64.2.AppImage
           
           # Run AppImage inside foreign chroot
