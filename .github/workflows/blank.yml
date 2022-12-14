@@ -15,7 +15,7 @@ jobs:
         id: runcmd
         with:
           arch: aarch64
-          distro: ubuntu22.04
+          distro: ubuntu_latest
           run: |
             sudo apt update
             sudo apt install wget
