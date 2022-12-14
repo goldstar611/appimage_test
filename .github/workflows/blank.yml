@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: Run a multi-line script
         run: |
-          sudo apt update
           sudo dpkg --add-architecture arm64
+          sudo apt update
           sudo apt install -y qemu qemu-user-static wget libfuse2:arm64
           uname -a
           wget https://cloud.john-livingston.fr/s/jKc7besKdzWm6pf/download/bash-4.4.20-aarch64.2.AppImage
