@@ -33,7 +33,7 @@ jobs:
           file bash-4.4.20-aarch64.2.AppImage
           
           # Run AppImage inside foreign chroot
-          sudo chroot . bash -c './bash-4.4.20-aarch64.2.AppImage -c "env"'
+          #sudo chroot . bash -c './bash-4.4.20-aarch64.2.AppImage -c "env"'
           
       - name: Upload release artifacts
         run: gh release upload "$GITHUB_REF_NAME" *.AppImage
